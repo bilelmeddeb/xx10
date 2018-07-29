@@ -1,0 +1,38 @@
+package tn.isi.dao;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import tn.isi.entites.Sondage;
+
+public interface SondageRepository extends JpaRepository<Sondage, Long> {
+
+	public List<Sondage> findByTitre(String t);
+
+	public Page<Sondage> findByTitre(String t, Pageable pageable);
+
+ 	@Query("select s from Sondage s where s.titre like :x")
+	public Page<Sondage> chercherSondagePage(@Param("x") String motCle, Pageable pageable);
+
+	@Query("select s from Sondage s where s.dateCreation >:x and s.dateCreation <:y")
+	public List<Sondage> chercherSondageDate(@Param("x") Date d1, @Param("y") Date d2);
+
+	
+	@Query("select sndg from  Sondage  sndg  where sndg.owner= :cin")
+	public List<Sondage> chercheSondageByUserCreer(@Param("cin") String cin);
+
+	
+	@Query("select sndg from  Sondage sndg join sndg.users_jawbou_3aliya u where u.cin = :cin ")
+	public List<Sondage> chercheSondageByUserRependue(@Param("cin") String cin);
+	
+
+	@Query("select sndg  from Sondage sndg join sndg.sous_theme sthm where sthm.titre = :title ")
+	public List<Sondage> chercheSondageBySoustheme(@Param("title") String title);
+
+}
