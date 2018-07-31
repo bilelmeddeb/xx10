@@ -17,20 +17,17 @@ public interface SondageRepository extends JpaRepository<Sondage, Long> {
 
 	public Page<Sondage> findByTitre(String t, Pageable pageable);
 
- 	@Query("select s from Sondage s where s.titre like :x")
+	@Query("select s from Sondage s where s.titre like :x")
 	public Page<Sondage> chercherSondagePage(@Param("x") String motCle, Pageable pageable);
 
 	@Query("select s from Sondage s where s.dateCreation >:x and s.dateCreation <:y")
 	public List<Sondage> chercherSondageDate(@Param("x") Date d1, @Param("y") Date d2);
 
-	
 	@Query("select sndg from  Sondage  sndg  where sndg.owner= :cin")
 	public List<Sondage> chercheSondageByUserCreer(@Param("cin") String cin);
 
-	
 	@Query("select sndg from  Sondage sndg join sndg.users_jawbou_3aliya u where u.cin = :cin ")
 	public List<Sondage> chercheSondageByUserRependue(@Param("cin") String cin);
-	
 
 	@Query("select sndg  from Sondage sndg join sndg.sous_theme sthm where sthm.titre = :title ")
 	public List<Sondage> chercheSondageBySoustheme(@Param("title") String title);
