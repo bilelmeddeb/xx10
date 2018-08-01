@@ -18,5 +18,7 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
 
 	@Query(" select s from Sondage s where s.id= :x")
 	public List<Question> chercherQuestionBySondage(@Param("x")String idSondage);
-
+    
+	
+	
 }

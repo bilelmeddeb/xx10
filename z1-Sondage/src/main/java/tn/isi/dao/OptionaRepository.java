@@ -15,5 +15,4 @@ public interface OptionaRepository extends JpaRepository<Optiona, Long>{
 	@Query("select q from  Question q where q.id = :x")
 	public List<Optiona> chercherOptionaByQuestion(@Param("x") Long idQuestion );
 
-
 }

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Question implements Serializable{
@@ -24,6 +25,9 @@ public class Question implements Serializable{
 	@JoinColumn(name="ID_SND")
 	private Sondage sondage;
 
+	@OneToOne
+	@JoinColumn(name="Choosen_Choice")
+	 private Optiona optiona ; 
 	public Long getId() {
 		return id;
 	}
@@ -75,6 +79,29 @@ public class Question implements Serializable{
 		this.sondage = sondage;
 	}
 
+	
+	public Optiona getOptiona() {
+		return optiona;
+	}
+
+	public void setOptiona(Optiona optiona) {
+		this.optiona = optiona;
+	}
+
+	
+	
+	
+	public Question(String titre_question, Collection<Optiona> options, Sondage sondage, Optiona optiona) {
+		super();
+		this.titre_question = titre_question;
+		this.options = options;
+		this.sondage = sondage;
+		this.optiona = optiona;
+	}
+	
+    
+	
+	
 	public Question(String titre_question, Collection<Optiona> options) {
 		super();
 		this.titre_question = titre_question;
