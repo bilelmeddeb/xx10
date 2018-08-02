@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import tn.isi.entites.Categorie;
-import tn.isi.entites.Sous_theme;
 import tn.isi.entites.User;
 
 public interface CategorieRpository extends JpaRepository<Categorie, Long> {

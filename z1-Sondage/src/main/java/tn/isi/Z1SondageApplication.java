@@ -26,15 +26,13 @@ import tn.isi.dao.CategorieRpository;
 import tn.isi.dao.OptionaRepository;
 import tn.isi.dao.QuestionRepository;
 import tn.isi.dao.SondageRepository;
-import tn.isi.dao.Sous_themeRepository;
-import tn.isi.dao.ThemeRepository;
+
 import tn.isi.dao.UserRepository;
 import tn.isi.entites.Categorie;
 import tn.isi.entites.Optiona;
 import tn.isi.entites.Question;
 import tn.isi.entites.Sondage;
-import tn.isi.entites.Sous_theme;
-import tn.isi.entites.Theme;
+
 import tn.isi.entites.User;
 
 @SpringBootApplication

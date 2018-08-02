@@ -34,9 +34,7 @@ public class Sondage implements Serializable{
 	@ManyToMany(mappedBy="les_snd_jawibt_alihom")
 	private Collection<User> users_jawbou_3aliya;
 	
-	@ManyToOne
-	@JoinColumn(name="id_S_TH")
-	private Sous_theme	sous_theme;
+	
 
 	@ManyToOne
 	private Categorie categorie ; 
@@ -104,16 +102,10 @@ public class Sondage implements Serializable{
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
 	}
 
-	public Sous_theme getSous_theme() {
-		return sous_theme;
-	}
-
-	public void setSous_theme(Sous_theme sous_theme) {
-		this.sous_theme = sous_theme;
-	}
+	
 
 	public Sondage(String titre, String description, Date dateCreation, boolean accepted, User owner,
-			Collection<Question> questions, Collection<User> users_jawbou_3aliya, Sous_theme sous_theme) {
+			Collection<Question> questions, Collection<User> users_jawbou_3aliya) {
 		super();
 		this.titre = titre;
 		Description = description;
@@ -122,11 +114,10 @@ public class Sondage implements Serializable{
 		this.owner = owner;
 		this.questions = questions;
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
-		this.sous_theme = sous_theme;
 	}
 
 	public Sondage(String titre, String description, Date dateCreation, User owner, Collection<Question> questions,
-			Collection<User> users_jawbou_3aliya, Sous_theme sous_theme) {
+			Collection<User> users_jawbou_3aliya) {
 		super();
 		this.titre = titre;
 		Description = description;
@@ -134,7 +125,6 @@ public class Sondage implements Serializable{
 		this.owner = owner;
 		this.questions = questions;
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
-		this.sous_theme = sous_theme;
 	}
 
 	public Sondage(String titre, String description, Date dateCreation, User owner) {
@@ -173,6 +163,19 @@ public class Sondage implements Serializable{
 		this.dateCreation = dateCreation;
 		this.owner = owner;
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
+	}
+
+	public Sondage(String titre, String description, Date dateCreation, boolean accepted, User owner,
+			Collection<Question> questions, Collection<User> users_jawbou_3aliya, Categorie categorie) {
+		super();
+		this.titre = titre;
+		Description = description;
+		this.dateCreation = dateCreation;
+		this.accepted = accepted;
+		this.owner = owner;
+		this.questions = questions;
+		this.users_jawbou_3aliya = users_jawbou_3aliya;
+		this.categorie = categorie;
 	}
 	 
 	
