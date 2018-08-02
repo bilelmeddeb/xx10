@@ -31,5 +31,6 @@ public interface SondageRepository extends JpaRepository<Sondage, Long> {
 
 	@Query("select sndg  from Sondage sndg join sndg.sous_theme sthm where sthm.titre = :title ")
 	public List<Sondage> chercheSondageBySoustheme(@Param("title") String title);
-
+	@Query("select sndg  from Sondage sndg join sndg.categorie ctgr where ctgr.name= :title ")
+	public List<Sondage> chercheSondageByCategorie(@Param("title") String title);
 }

@@ -38,6 +38,8 @@ public class Sondage implements Serializable{
 	@JoinColumn(name="id_S_TH")
 	private Sous_theme	sous_theme;
 
+	@ManyToOne
+	private Categorie categorie ; 
 	public Long getId() {
 		return id;
 	}
