@@ -25,7 +25,7 @@ public class User2Controller {
 		return userrepository.chercherUserByNom("%" + mc + "%");
 	}
 
-	@RequestMapping(value = "/usersList", method = RequestMethod.GET)
+	@RequestMapping(value = "/usersLista", method = RequestMethod.GET)
 	public List<User> getUsers() 
 	{
 		return userrepository.findAll();
