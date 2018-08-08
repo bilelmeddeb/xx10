@@ -87,6 +87,8 @@ public class Z1SondageApplication {
 		 * Optiona("ok5")); optionaRepository.save(new Optiona("ok6"));
 		 * optionaRepository.save(new Optiona("ok7"));
 		 */
+	
+		/*
 		OptionaRepository optionaRepository = ctx.getBean(OptionaRepository.class);
 		Optiona opa1 = optionaRepository.save(new Optiona("oui"));
 		Optiona opa2 = optionaRepository.save(new Optiona("Non"));
@@ -257,5 +259,12 @@ public class Z1SondageApplication {
 		// Page<User> findd = userRepository.findByNom("bilel", new PageRequest(0, 1));
 		/// findd.forEach(e -> System.out.println(e.getNom()));
 		/**/
+		UserRepository userRepository = ctx.getBean(UserRepository.class);
+		userRepository.save(new User("09814217", "bilel", "meddeb", "bilel@meddeb.com", (long)23206993, "123456789", new Date()));
+		userRepository.save(new User("09814216", "med", "meddeb", "bilel@meddeb.com", (long)23206993, "123456789", new Date()));
+		userRepository.save(new User("09814218", "hamza", "meddeb", "bilel@meddeb.com", (long)23206993, "123456789", new Date()));
+
 	}
+	
+	
 }

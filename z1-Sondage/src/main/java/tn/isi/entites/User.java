@@ -27,7 +27,34 @@ public class User implements Serializable{
 	private String password;
 	private Roles roles;
 	private Date birth_date ; 
+	private String photoUser;
 	
+	
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, Roles roles,
+			Date birth_date, String photoUser, Collection<Sondage> les_snd_ALI_sna3thom,
+			Collection<Sondage> les_snd_jawibt_alihom) {
+		super();
+		this.cin = cin;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.tel = tel;
+		this.password = password;
+		this.roles = roles;
+		this.birth_date = birth_date;
+		this.photoUser = photoUser;
+		this.les_snd_ALI_sna3thom = les_snd_ALI_sna3thom;
+		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
+	}
+
+	public String getPhotoUser() {
+		return photoUser;
+	}
+
+	public void setPhotoUser(String photoUser) {
+		this.photoUser = photoUser;
+	}
+
 	@OneToMany(mappedBy="owner")
 	private Collection<Sondage> les_snd_ALI_sna3thom;
 	
@@ -185,6 +212,19 @@ public class User implements Serializable{
 		this.birth_date = birth_date;
 		this.les_snd_ALI_sna3thom = les_snd_ALI_sna3thom;
 		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
+	}
+
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, Date birth_date,
+			String photoUser) {
+		super();
+		this.cin = cin;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.tel = tel;
+		this.password = password;
+		this.birth_date = birth_date;
+		this.photoUser = photoUser;
 	}
 	
 	

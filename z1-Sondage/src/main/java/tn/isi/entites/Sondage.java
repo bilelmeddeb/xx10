@@ -18,8 +18,25 @@ public class Sondage implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	private String photosnd;
 	
 	private String titre;
+	public String getPhotosnd() {
+		return photosnd;
+	}
+
+	public void setPhotosnd(String photosnd) {
+		this.photosnd = photosnd;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
 	private String Description;
 	private Date dateCreation;
 	private boolean accepted ;
@@ -176,6 +193,28 @@ public class Sondage implements Serializable{
 		this.questions = questions;
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
 		this.categorie = categorie;
+	}
+
+	public Sondage(String photosnd, String titre, String description, Date dateCreation, boolean accepted, User owner,
+			Collection<Question> questions, Collection<User> users_jawbou_3aliya, Categorie categorie) {
+		super();
+		this.photosnd = photosnd;
+		this.titre = titre;
+		Description = description;
+		this.dateCreation = dateCreation;
+		this.accepted = accepted;
+		this.owner = owner;
+		this.questions = questions;
+		this.users_jawbou_3aliya = users_jawbou_3aliya;
+		this.categorie = categorie;
+	}
+
+	public Sondage(String photosnd, String titre, String description, Date dateCreation) {
+		super();
+		this.photosnd = photosnd;
+		this.titre = titre;
+		Description = description;
+		this.dateCreation = dateCreation;
 	}
 	 
 	
