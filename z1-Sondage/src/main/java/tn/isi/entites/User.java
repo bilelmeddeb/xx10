@@ -1,5 +1,6 @@
 package tn.isi.entites;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -15,23 +16,39 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
-public class User implements Serializable{
-	
+public class User implements Serializable {
+
 	@Id
 	private String cin;
-	@Column(name="NOM",length=30)
+	@Column(name = "NOM", length = 30)
 	private String nom;
 	private String prenom;
 	private String email;
 	private Long tel;
 	private String password;
-	private Roles roles;
-	private Date birth_date ; 
-	private String photoUser;
+	private String roles;
+	private Date birth_date;
+	private String imageuser;
+	private String gender;
 	
 	
-	public User(String cin, String nom, String prenom, String email, Long tel, String password, Roles roles,
-			Date birth_date, String photoUser, Collection<Sondage> les_snd_ALI_sna3thom,
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
+			Date birth_date, String imageuser, String gender) {
+		super();
+		this.cin = cin;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.tel = tel;
+		this.password = password;
+		this.roles = roles;
+		this.birth_date = birth_date;
+		this.imageuser = imageuser;
+		this.gender = gender;
+	}
+
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
+			Date birth_date, String imageuser, String gender, Collection<Sondage> les_snd_ALI_sna3thom,
 			Collection<Sondage> les_snd_jawibt_alihom) {
 		super();
 		this.cin = cin;
@@ -42,24 +59,50 @@ public class User implements Serializable{
 		this.password = password;
 		this.roles = roles;
 		this.birth_date = birth_date;
-		this.photoUser = photoUser;
+		this.imageuser = imageuser;
+		this.gender = gender;
 		this.les_snd_ALI_sna3thom = les_snd_ALI_sna3thom;
 		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
 	}
 
-	public String getPhotoUser() {
-		return photoUser;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setPhotoUser(String photoUser) {
-		this.photoUser = photoUser;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	@OneToMany(mappedBy="owner")
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
+			Date birth_date, String imageuser, Collection<Sondage> les_snd_ALI_sna3thom,
+			Collection<Sondage> les_snd_jawibt_alihom) {
+		super();
+		this.cin = cin;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.tel = tel;
+		this.password = password;
+		this.roles = roles;
+		this.birth_date = birth_date;
+		this.imageuser = imageuser;
+		this.les_snd_ALI_sna3thom = les_snd_ALI_sna3thom;
+		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
+	}
+
+	public String getimageuser() {
+		return imageuser;
+	}
+
+	public void setimageuser(String imageuser) {
+		this.imageuser = imageuser;
+	}
+
+	@OneToMany(mappedBy = "owner")
 	private Collection<Sondage> les_snd_ALI_sna3thom;
-	
+
 	@ManyToMany
-	@JoinTable(name="S_U_R")
+	@JoinTable(name = "S_U_R")
 	private Collection<Sondage> les_snd_jawibt_alihom;
 
 	public String getCin() {
@@ -110,11 +153,11 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public Roles getRoles() {
+	public String getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Roles roles) {
+	public void setRoles(String roles) {
 		this.roles = roles;
 	}
 
@@ -147,7 +190,7 @@ public class User implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String cin, String nom, String prenom, String email, Long tel, String password, Roles roles,
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
 			Date birth_date, Collection<Sondage> les_snd_ALI_sna3thom, Collection<Sondage> les_snd_jawibt_alihom) {
 		super();
 		this.cin = cin;
@@ -162,7 +205,7 @@ public class User implements Serializable{
 		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
 	}
 
-	public User(String cin, String nom, String prenom, String email, Long tel, String password, Roles roles,
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
 			Date birth_date, Collection<Sondage> les_snd_jawibt_alihom) {
 		super();
 		this.cin = cin;
@@ -215,7 +258,7 @@ public class User implements Serializable{
 	}
 
 	public User(String cin, String nom, String prenom, String email, Long tel, String password, Date birth_date,
-			String photoUser) {
+			String imageuser) {
 		super();
 		this.cin = cin;
 		this.nom = nom;
@@ -224,10 +267,7 @@ public class User implements Serializable{
 		this.tel = tel;
 		this.password = password;
 		this.birth_date = birth_date;
-		this.photoUser = photoUser;
+		this.imageuser = imageuser;
 	}
-	
-	
-		
-	
+
 }

@@ -38,4 +38,8 @@ public interface UserRepository extends JpaRepository<User, String> {
 
 	public List<Optiona> Get_Liste_Reponce(@Param("cin") String cin, @Param("id_SND") Long id_SND);
 
+	public User findOneByEmail(String email);
+	
+	public User findOneByEmailAndPassword(String email, String password);
+	
 }
