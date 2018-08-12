@@ -227,11 +227,21 @@ public class Z1SondageApplication {
 		 * findd.forEach(e -> System.out.println(e.getNom())); /
 		 **/
 		UserRepository userRepository = ctx.getBean(UserRepository.class);
-		userRepository.save(new User("098", "bilel", "meddeb", "bilel@meddeb.com", (long) 23206993, "123456789", new Date()));
+		User bilel= userRepository.save(new User("098", "bilel", "meddeb", "bilel@meddeb.com", (long) 23206993, "123456789", new Date()));
 		userRepository.save(new User("097", "med", "meddeb", "bilel@meddeb.com", (long) 23206993, "123456789", new Date()));
 		userRepository.save(new User("096", "hamza", "meddeb", "bilel@meddeb.com", (long) 2, "123456789", new Date()));
 		userRepository.save(new User("095", "bilel", "meddeb", "a@meddeb.com", (long) 23206993, "123456789","USER", new Date(), "aaaaaaa", "xs"));
 		userRepository.save(new User("094", "bilel", "meddeb", "b@meddeb.com", (long) 23206993, "123456789","ADMIN", new Date(), "aaaaaaa", "xs"));
+		
+	/*	SondageRepository sondageRepository =ctx.getBean(SondageRepository.class);
+		sondageRepository.save(new Sondage("snd1", "zara", "mrawil", new Date(), true, bilel));*/
+	
+		SondageRepository sondageRepository =ctx.getBean(SondageRepository.class);
+		sondageRepository.save(new Sondage("snd1", "zara", "mrawil", new Date(), true));
+		sondageRepository.save(new Sondage("snd2", "zara2", "mrawil2", new Date(), true));
+		sondageRepository.save(new Sondage("snd3", "zara3", "mrawil3", new Date(), true));
+		sondageRepository.save(new Sondage("sndh2", "ztttara2", "mrawil2", new Date(), true));
+
 
 	}
 

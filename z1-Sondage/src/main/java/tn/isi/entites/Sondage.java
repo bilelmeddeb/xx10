@@ -21,6 +21,7 @@ public class Sondage implements Serializable{
 	private String photosnd;
 	
 	private String titre;
+	
 	public String getPhotosnd() {
 		return photosnd;
 	}
@@ -216,9 +217,42 @@ public class Sondage implements Serializable{
 		Description = description;
 		this.dateCreation = dateCreation;
 	}
+
+	public Sondage(String photosnd, String titre, String description, Date dateCreation, boolean accepted, User owner) {
+		super();
+		this.photosnd = photosnd;
+		this.titre = titre;
+		Description = description;
+		this.dateCreation = dateCreation;
+		this.accepted = accepted;
+		this.owner = owner;
+	}
+
+	public Sondage(Long id, String photosnd, String titre, String description, Date dateCreation, boolean accepted,
+			User owner, Collection<User> users_jawbou_3aliya, Categorie categorie) {
+		super();
+		this.id = id;
+		this.photosnd = photosnd;
+		this.titre = titre;
+		Description = description;
+		this.dateCreation = dateCreation;
+		this.accepted = accepted;
+		this.owner = owner;
+		this.users_jawbou_3aliya = users_jawbou_3aliya;
+		this.categorie = categorie;
+	}
+
+	public Sondage(String photosnd, String titre, String description, Date dateCreation, boolean accepted) {
+		super();
+		this.photosnd = photosnd;
+		this.titre = titre;
+		Description = description;
+		this.dateCreation = dateCreation;
+		this.accepted = accepted;
+	}
 	 
 	
-
+ 
 
 	
 	
