@@ -22,6 +22,20 @@ public class Sondage implements Serializable{
 	
 	private String titre;
 	
+	@ManyToOne
+	@JoinColumn(name="CIN_OWNER")
+	private User owner;
+	
+	@OneToMany(mappedBy="sondage")
+	private Collection<Question> questions;
+	
+	@ManyToMany(mappedBy="les_snd_jawibt_alihom")
+	private Collection<User> users_jawbou_3aliya;
+	
+	private String Description;
+	private Date dateCreation;
+	private boolean accepted ;
+	
 	public String getPhotosnd() {
 		return photosnd;
 	}
@@ -38,19 +52,9 @@ public class Sondage implements Serializable{
 		this.categorie = categorie;
 	}
 
-	private String Description;
-	private Date dateCreation;
-	private boolean accepted ;
+
 	
-	@ManyToOne
-	@JoinColumn(name="CIN_OWNER")
-	private User owner;
-	
-	@OneToMany(mappedBy="sondage")
-	private Collection<Question> questions;
-	
-	@ManyToMany(mappedBy="les_snd_jawibt_alihom")
-	private Collection<User> users_jawbou_3aliya;
+
 	
 	
 
