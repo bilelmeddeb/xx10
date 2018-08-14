@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +28,12 @@ public class QuestionController {
 			this.questionRepository=questionRepository;
 	}
 	
+	@RequestMapping(
+			value="/savequs",
+			method = RequestMethod.POST,
+			produces= MediaType.APPLICATION_JSON_VALUE,
+			consumes=MediaType.APPLICATION_JSON_VALUE
+			)
 	public ResponseEntity<?> savequestion(@RequestBody Question question){
 		Question createdQuestion=questionRepository.save(question);
 		return new ResponseEntity<>(createdQuestion,HttpStatus.OK);
