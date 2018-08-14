@@ -32,7 +32,7 @@ public class Sondage implements Serializable{
 	@ManyToMany(mappedBy="les_snd_jawibt_alihom")
 	private Collection<User> users_jawbou_3aliya;
 	
-	private String Description;
+	private String descriptions;
 	private Date dateCreation;
 	private boolean accepted ;
 	
@@ -75,13 +75,23 @@ public class Sondage implements Serializable{
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
+	
 
-	public String getDescription() {
-		return Description;
+	
+
+	public Sondage(String photosnd, String titre, String descriptions) {
+		super();
+		this.photosnd = photosnd;
+		this.titre = titre;
+		this.descriptions = descriptions;
 	}
 
-	public void setDescription(String description) {
-		Description = description;
+	public String getDescriptions() {
+		return descriptions;
+	}
+
+	public void setDescriptions(String descriptions) {
+		this.descriptions = descriptions;
 	}
 
 	public Date getDateCreation() {
@@ -126,11 +136,11 @@ public class Sondage implements Serializable{
 
 	
 
-	public Sondage(String titre, String description, Date dateCreation, boolean accepted, User owner,
+	public Sondage(String titre, String descriptions, Date dateCreation, boolean accepted, User owner,
 			Collection<Question> questions, Collection<User> users_jawbou_3aliya) {
 		super();
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.accepted = accepted;
 		this.owner = owner;
@@ -138,29 +148,29 @@ public class Sondage implements Serializable{
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
 	}
 
-	public Sondage(String titre, String description, Date dateCreation, User owner, Collection<Question> questions,
+	public Sondage(String titre, String descriptions, Date dateCreation, User owner, Collection<Question> questions,
 			Collection<User> users_jawbou_3aliya) {
 		super();
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.owner = owner;
 		this.questions = questions;
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
 	}
 
-	public Sondage(String titre, String description, Date dateCreation, User owner) {
+	public Sondage(String titre, String descriptions, Date dateCreation, User owner) {
 		super();
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.owner = owner;
 	}
 
-	public Sondage(String titre, String description, Date dateCreation, Collection<User> users_jawbou_3aliya) {
+	public Sondage(String titre, String descriptions, Date dateCreation, Collection<User> users_jawbou_3aliya) {
 		super();
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
 	}
@@ -170,28 +180,28 @@ public class Sondage implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Sondage(String titre, String description, Date dateCreation) {
+	public Sondage(String titre, String descriptions, Date dateCreation) {
 		super();
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 	}
 
-	public Sondage(String titre, String description, Date dateCreation, User owner,
+	public Sondage(String titre, String descriptions, Date dateCreation, User owner,
 			Collection<User> users_jawbou_3aliya) {
 		super();
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.owner = owner;
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
 	}
 
-	public Sondage(String titre, String description, Date dateCreation, boolean accepted, User owner,
+	public Sondage(String titre, String descriptions, Date dateCreation, boolean accepted, User owner,
 			Collection<Question> questions, Collection<User> users_jawbou_3aliya, Categorie categorie) {
 		super();
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.accepted = accepted;
 		this.owner = owner;
@@ -200,12 +210,12 @@ public class Sondage implements Serializable{
 		this.categorie = categorie;
 	}
 
-	public Sondage(String photosnd, String titre, String description, Date dateCreation, boolean accepted, User owner,
+	public Sondage(String photosnd, String titre, String descriptions, Date dateCreation, boolean accepted, User owner,
 			Collection<Question> questions, Collection<User> users_jawbou_3aliya, Categorie categorie) {
 		super();
 		this.photosnd = photosnd;
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.accepted = accepted;
 		this.owner = owner;
@@ -214,31 +224,31 @@ public class Sondage implements Serializable{
 		this.categorie = categorie;
 	}
 
-	public Sondage(String photosnd, String titre, String description, Date dateCreation) {
+	public Sondage(String photosnd, String titre, String descriptions, Date dateCreation) {
 		super();
 		this.photosnd = photosnd;
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 	}
 
-	public Sondage(String photosnd, String titre, String description, Date dateCreation, boolean accepted, User owner) {
+	public Sondage(String photosnd, String titre, String descriptions, Date dateCreation, boolean accepted, User owner) {
 		super();
 		this.photosnd = photosnd;
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.accepted = accepted;
 		this.owner = owner;
 	}
 
-	public Sondage(Long id, String photosnd, String titre, String description, Date dateCreation, boolean accepted,
+	public Sondage(Long id, String photosnd, String titre, String descriptions, Date dateCreation, boolean accepted,
 			User owner, Collection<User> users_jawbou_3aliya, Categorie categorie) {
 		super();
 		this.id = id;
 		this.photosnd = photosnd;
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.accepted = accepted;
 		this.owner = owner;
@@ -246,11 +256,11 @@ public class Sondage implements Serializable{
 		this.categorie = categorie;
 	}
 
-	public Sondage(String photosnd, String titre, String description, Date dateCreation, boolean accepted) {
+	public Sondage(String photosnd, String titre, String descriptions, Date dateCreation, boolean accepted) {
 		super();
 		this.photosnd = photosnd;
 		this.titre = titre;
-		Description = description;
+		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.accepted = accepted;
 	}

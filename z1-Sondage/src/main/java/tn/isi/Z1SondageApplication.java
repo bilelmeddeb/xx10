@@ -241,7 +241,7 @@ public class Z1SondageApplication {
 		sondageRepository.save(new Sondage("snd2", "zara2", "mrawil2", new Date(), true));
 		sondageRepository.save(new Sondage("snd3", "zara3", "mrawil3", new Date(), true));
 		sondageRepository.save(new Sondage("sndh2", "ztttara2", "mrawil2", new Date(), true));
-
+		sondageRepository.save(new Sondage("bbbb", "zara", "ddfdd"));
 
 	}
 
