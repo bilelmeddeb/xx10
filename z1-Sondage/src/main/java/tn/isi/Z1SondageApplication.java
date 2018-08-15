@@ -157,7 +157,7 @@ public class Z1SondageApplication {
 		  questionRepository.save(q11);
 		  questionRepository.save(q12);
 		 
-		/*
+		/*..
 		 * SondageRepository sondageRepository = ctx.getBean(SondageRepository.class);
 		 * 
 		 * UserRepository userRepository = ctx.getBean(UserRepository.class); 
