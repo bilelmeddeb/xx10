@@ -42,17 +42,12 @@ public class Z1SondageApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Z1SondageApplication.class, args);
 
-		// fama 7lkaya chakeke fiha na3rech es ce que ya mel hibernate aka l code hqm
-		// adheka walla 7kaya tab3ales convention ta3 el web
-		// hamza nahihom el kol ?? akili fi repo ?? w njarab ??
-		// la7dha trah ncomentiwhem
-
+	
 		/*
 		 * UserRepository userRepository = ctx.getBean(UserRepository.class);
 		 * SondageRepository sondageRepository = ctx.getBean(SondageRepository.class);
-		 * userRepository.save(new User("09814217", "meddeb", "bilel", "m2b@mail.com",
-		 * (long) 23206993)); userRepository.save(new User("098142172", "meddeb2",
-		 * "bilel2", "m2b@mail.com2", (long) 232062993));
+		 * userRepository.save(new User("09814217", "meddeb", "bilel", "m2b@mail.com", (long) 23206993)); 
+		 * userRepository.save(new User("09814212", "meddeb2","bilel2", "m2b@mail.com2", (long) 232062993));
 		 * 
 		 * //userRepository.findAll().forEach(p -> System.out.println(p.getCin()));
 		 * 
@@ -62,17 +57,6 @@ public class Z1SondageApplication {
 		 * sondageRepository.save(new Sondage("Medicament ", "lgonfoln", new Date()));
 		 * sondageRepository.save(new Sondage("Medicament ", "Doliprane ", new Date()));
 		 * 
-		 *
-		 * 
-		 * ThemeRepository ThemeRepository = ctx.getBean(ThemeRepository.class);
-		 * ThemeRepository.save(new Theme("Sport")); ThemeRepository.save(new
-		 * Theme("Medicamùent"));
-		 * 
-		 * 
-		 * Sous_themeRepository sous_themeRepository =
-		 * ctx.getBean(Sous_themeRepository.class); sous_themeRepository.save(new
-		 * Sous_theme("foot")); sous_themeRepository.save(new Sous_theme("dwa"));
-		 * 
 		 * QuestionRepository questionRepository=ctx.getBean(QuestionRepository.class);
 		 * questionRepository.save(new Question("chniya rayek"));
 		 * questionRepository.save(new Question("chniya rayek2"));
@@ -81,64 +65,79 @@ public class Z1SondageApplication {
 		 * 
 		 * 
 		 * OptionaRepository optionaRepository=ctx.getBean(OptionaRepository.class);
-		 * optionaRepository.save(new Optiona("ok1")); optionaRepository.save(new
-		 * Optiona("ok2")); optionaRepository.save(new Optiona("ok3"));
-		 * optionaRepository.save(new Optiona("ok4")); optionaRepository.save(new
-		 * Optiona("ok5")); optionaRepository.save(new Optiona("ok6"));
+		 * optionaRepository.save(new Optiona("ok1")); 
+		 * optionaRepository.save(new Optiona("ok2")); 
+		 * optionaRepository.save(new Optiona("ok3"));
+		 * optionaRepository.save(new Optiona("ok4"));
+		 * optionaRepository.save(new Optiona("ok5")); 
+		 * optionaRepository.save(new Optiona("ok6"));
 		 * optionaRepository.save(new Optiona("ok7"));
 		 */
+		 OptionaRepository optionaRepository = ctx.getBean(OptionaRepository.class);
 
 		/*
 		 * OptionaRepository optionaRepository = ctx.getBean(OptionaRepository.class);
-		 * Optiona opa1 = optionaRepository.save(new Optiona("oui")); Optiona opa2 =
-		 * optionaRepository.save(new Optiona("Non")); Optiona opa3 =
-		 * optionaRepository.save(new Optiona("Aucun")); Optiona opa4 =
-		 * optionaRepository.save(new Optiona("YES")); Optiona opa5 =
-		 * optionaRepository.save(new Optiona("Nine")); Optiona opa6 =
-		 * optionaRepository.save(new Optiona("Naght"));
-		 * 
-		 * Optiona o1 = optionaRepository.save(new Optiona("ok1")); Optiona o2 =
-		 * optionaRepository.save(new Optiona("ok2")); Optiona o3 =
-		 * optionaRepository.save(new Optiona("ok3")); Optiona o4 =
-		 * optionaRepository.save(new Optiona("ok4")); Optiona o5 =
-		 * optionaRepository.save(new Optiona("ok5")); Optiona o6 =
-		 * optionaRepository.save(new Optiona("ok6")); Optiona o7 =
-		 * optionaRepository.save(new Optiona("ok7")); Optiona o8 =
-		 * optionaRepository.save(new Optiona("ok88"));
-		 * 
-		 * QuestionRepository questionRepository =
-		 * ctx.getBean(QuestionRepository.class); Collection<Optiona> optionas1 = new
-		 * ArrayList<Optiona>();
-		 * 
-		 * optionas1.add(o1); optionas1.add(o2); Collection<Optiona> optionas2 = new
-		 * ArrayList<Optiona>(); optionas2.add(o3); optionas2.add(o4);
-		 * Collection<Optiona> optionas3 = new ArrayList<Optiona>(); optionas3.add(o5);
-		 * optionas3.add(o6);
-		 * 
-		 * Collection<Optiona> optionas4 = new ArrayList<Optiona>();
-		 * 
-		 * optionas4.add(o7); optionas4.add(o8);
-		 * 
-		 * Question q1 = questionRepository.save(new Question("chniya rayek",
-		 * optionas1)); Question q2 = questionRepository.save(new
-		 * Question("chniya rayek2", optionas2)); Question q3 =
-		 * questionRepository.save(new Question("chniya rayek10", optionas3)); Question
-		 * q4 = questionRepository.save(new Question("chniya rayek20", optionas4));
-		 * 
-		 * o1.setQst(q1); o2.setQst(q1); o3.setQst(q2); o4.setQst(q2); o5.setQst(q3);
-		 * o6.setQst(q3); o7.setQst(q4); o8.setQst(q4); // modifyin question
-		 * 
-		 * optionaRepository.save(o1); optionaRepository.save(o2);
-		 * optionaRepository.save(o3);
-		 * 
-		 * optionaRepository.save(o4);
-		 * 
-		 * optionaRepository.save(o5);
-		 * 
-		 * optionaRepository.save(o6);
-		 * 
-		 * optionaRepository.save(o7); optionaRepository.save(o8); SondageRepository
-		 * sondageRepository = ctx.getBean(SondageRepository.class);
+		 * Optiona opa1 = optionaRepository.save(new Optiona("oui")); 
+		 * Optiona opa2 = optionaRepository.save(new Optiona("Non")); 
+		 * Optiona opa3 = optionaRepository.save(new Optiona("Aucun")); 
+		 * Optiona opa4 = optionaRepository.save(new Optiona("YES")); 
+		 * Optiona opa5 = optionaRepository.save(new Optiona("Nine")); 
+		 * Optiona opa6 = optionaRepository.save(new Optiona("Naght"));
+		 */
+		
+		  Optiona o1 = optionaRepository.save(new Optiona("ok1")); 
+		  Optiona o2 = optionaRepository.save(new Optiona("ok2")); 
+		  Optiona o3 = optionaRepository.save(new Optiona("ok3")); 
+		  Optiona o4 = optionaRepository.save(new Optiona("ok4")); 
+		  Optiona o5 = optionaRepository.save(new Optiona("ok5")); 
+		  Optiona o6 = optionaRepository.save(new Optiona("ok6")); 
+		  Optiona o7 = optionaRepository.save(new Optiona("ok7")); 
+		  Optiona o8 = optionaRepository.save(new Optiona("ok88"));
+		  
+		  QuestionRepository questionRepository = ctx.getBean(QuestionRepository.class); 
+		  Collection<Optiona> optionas1 = new ArrayList<Optiona>();
+		  
+		  optionas1.add(o1); 
+		  optionas1.add(o2); 
+		  
+		  Collection<Optiona> optionas2 = new ArrayList<Optiona>(); 
+		  optionas2.add(o3); 
+		  optionas2.add(o4);
+		  
+		  Collection<Optiona> optionas3 = new ArrayList<Optiona>(); 
+		  optionas3.add(o5);
+		  optionas3.add(o6);
+		  
+		  Collection<Optiona> optionas4 = new ArrayList<Optiona>();
+		  optionas4.add(o7); 
+		  optionas4.add(o8);
+		  
+		  Question q1 = questionRepository.save(new Question("chniya rayek", optionas1)); 
+		  Question q2 = questionRepository.save(new Question("chniya rayek2", optionas2));
+		  Question q3 = questionRepository.save(new Question("chniya rayek10", optionas3));
+		  Question q4 = questionRepository.save(new Question("chniya rayek20", optionas4));
+		  
+		  o1.setQst(q1); 
+		  o2.setQst(q1); 
+		  o3.setQst(q2); 
+		  o4.setQst(q2); 
+		  o5.setQst(q3);
+		  o6.setQst(q3); 
+		  o7.setQst(q4); 
+		  o8.setQst(q4); // modifyin question
+		  
+		  optionaRepository.save(o1); 
+		  optionaRepository.save(o2);
+		  optionaRepository.save(o3);
+		  optionaRepository.save(o4);
+		  optionaRepository.save(o5);
+		  optionaRepository.save(o6);
+		  optionaRepository.save(o7); 
+		  optionaRepository.save(o8); 
+		  
+		 
+		/*
+		 * SondageRepository sondageRepository = ctx.getBean(SondageRepository.class);
 		 * 
 		 * UserRepository userRepository = ctx.getBean(UserRepository.class); User bilel
 		 * = userRepository .save(new User("4", "bilel", "meddeb", "b@mail.com", (long)
@@ -243,8 +242,19 @@ public class Z1SondageApplication {
 		sondageRepository.save(new Sondage("sndh2", "ztttara2", "mrawil2", new Date(), true));
 		sondageRepository.save(new Sondage("bbbb", "zara", "ddfdd"));
 		
-		QuestionRepository questionRepository=ctx.getBean(QuestionRepository.class);
-		questionRepository.save(new Question("chniya rayek"));
+		/*QuestionRepository questionRepository=ctx.getBean(QuestionRepository.class);
+		Question q1= questionRepository.save(new Question("chniya rayek1"));
+		Question q2= questionRepository.save(new Question("chniya raqqyek1"));*/
+		
+		Collection<Question> qq = new ArrayList<Question>();
+		qq.add(q1);
+		qq.add(q2);
+		
+		Sondage s1=	sondageRepository.save(new Sondage("qqq", "qqqa", new Date(), false, null, qq, null));
+		q1.setSondage(s1);
+		q2.setSondage(s1);
+		
+		sondageRepository.save(s1);
 	}
 
 }
