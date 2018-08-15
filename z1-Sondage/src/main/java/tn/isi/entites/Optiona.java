@@ -57,8 +57,7 @@ public class Optiona implements Serializable {
 		this.qst = qst;
 	}
 
-	
-	
+
 	public Question getQuestion() {
 		return question;
 	}

@@ -1,38 +1,20 @@
 package tn.isi;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
-import java.util.List;
-
-import javax.jws.soap.SOAPBinding.Use;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.context.ApplicationContext;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import com.jayway.jsonpath.Option;
 
-
-import tn.isi.dao.CategorieRpository;
 import tn.isi.dao.OptionaRepository;
 import tn.isi.dao.QuestionRepository;
 import tn.isi.dao.SondageRepository;
-
 import tn.isi.dao.UserRepository;
-import tn.isi.entites.Categorie;
 import tn.isi.entites.Optiona;
 import tn.isi.entites.Question;
 import tn.isi.entites.Sondage;
-
 import tn.isi.entites.User;
 
 @SpringBootApplication
@@ -157,7 +139,7 @@ public class Z1SondageApplication {
 		  questionRepository.save(q11);
 		  questionRepository.save(q12);
 		 
-		/*..
+		/*......
 		 * SondageRepository sondageRepository = ctx.getBean(SondageRepository.class);
 		 * 
 		 * UserRepository userRepository = ctx.getBean(UserRepository.class); 
