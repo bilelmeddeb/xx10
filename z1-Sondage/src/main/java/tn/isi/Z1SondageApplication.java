@@ -161,31 +161,20 @@ public class Z1SondageApplication {
 		 * SondageRepository sondageRepository = ctx.getBean(SondageRepository.class);
 		 * 
 		 * UserRepository userRepository = ctx.getBean(UserRepository.class); 
-		 * User bilel = userRepository .save(new User("4", "bilel", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date())); 
-		 * User hamza = userRepository .save(new User("2", "hamza", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date()));
-		 * User amir = userRepository .save(new User("3", "amir", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date())); 
-		 * User mohsen = userRepository .save(new User("10", "mohsen", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date()));
+		 * User bilel = userRepository.save(new User("4", "bilel", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date())); 
+		 * User hamza = userRepository.save(new User("2", "hamza", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date()));
+		 * User amir = userRepository.save(new User("3", "amir", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date())); 
+		 * User mohsen = userRepository.save(new User("10", "mohsen", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date()));
+		 * User afif = userRepository.save(new User("6", "afif", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date()));
+		 * User basma = userRepository .save(new User("9", "basma", "meddeb","b@mail.com", (long) 23206993, "123456789", new Date())); 
+		 * User wahid =userRepository .save(new User("10", "wahid", "meddeb", "b@mail.com", (long)23206993, "123456789", new Date()));
+		 * User adel = userRepository .save(new User("10", "adel", "meddeb","b@mail.com", (long) 23206993, "123456789", new Date()));
+		 * User abdou = userRepository .save(new User("9", "abdou", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date()));
 		 * 
-		 * User afif = userRepository .save(new User("6", "afif", "meddeb",
-		 * "b@mail.com", (long) 23206993, "123456789", new Date()));
+		 * Sondage snd1 = sondageRepository.save(new Sondage("foot", "foot", new Date(), bilel)); 
+		 * Sondage snd2 = sondageRepository.save(new Sondage("hnd", "foot", new Date(), hamza));
 		 * 
-		 * User basma = userRepository .save(new User("9", "basma", "meddeb",
-		 * "b@mail.com", (long) 23206993, "123456789", new Date())); User wahid =
-		 * userRepository .save(new User("10", "wahid", "meddeb", "b@mail.com", (long)
-		 * 23206993, "123456789", new Date()));
-		 * 
-		 * User adel = userRepository .save(new User("10", "adel", "meddeb",
-		 * "b@mail.com", (long) 23206993, "123456789", new Date()));
-		 * 
-		 * User abdou = userRepository .save(new User("9", "abdou", "meddeb",
-		 * "b@mail.com", (long) 23206993, "123456789", new Date()));
-		 * 
-		 * Sondage snd1 = sondageRepository.save(new Sondage("foot", "foot", new Date(),
-		 * bilel)); Sondage snd2 = sondageRepository.save(new Sondage("hnd", "foot", new
-		 * Date(), hamza));
-		 * 
-		 * Collection<Sondage> Sondage_I_Respond = new ArrayList<Sondage>();
-		 * Sondage_I_Respond.add(snd2);
+		 * Collection<Sondage> Sondage_I_Respond = new ArrayList<Sondage>(); Sondage_I_Respond.add(snd2);
 		 * 
 		 * adel.setLes_snd_jawibt_alihom(Sondage_I_Respond);
 		 * bilel.setLes_snd_jawibt_alihom(Sondage_I_Respond);
@@ -211,36 +200,39 @@ public class Z1SondageApplication {
 		 * users2.add(wahid); users2.add(afif); users2.add(abdou);
 		 * snd2.setUsers_jawbou_3aliya(users2); sondageRepository.save(snd2);
 		 * 
-		 * /// q1.setSondage(snd2); q2.setSondage(snd2); q3.setSondage(snd1);
+		 * q1.setSondage(snd2); q2.setSondage(snd2); q3.setSondage(snd1);
 		 * q4.setSondage(snd1);
 		 * 
 		 * // Nouveau Update q1.setOptiona(o1); q2.setOptiona(o4);
 		 * 
-		 * questionRepository.save(q1); questionRepository.save(q2);
-		 * questionRepository.save(q3); questionRepository.save(q4); // sous Categories
+		 * questionRepository.save(q1); 
+		 * questionRepository.save(q2);
+		 * questionRepository.save(q3); 
+		 * questionRepository.save(q4); 
+		 * // sous Categories
+		 * 
 		 * Collection<Categorie> categ_Multimidia_Liste = new ArrayList<Categorie>(); //
-		 * Categorie Categorie categ_Multimidia = new Categorie("Sport",
-		 * categ_Multimidia_Liste); // sousCategory1 Categorie telephone = new
+		 * Categorie Categorie categ_Multimidia = new Categorie("Sport",categ_Multimidia_Liste); 
+		 * // sousCategory1 Categorie telephone = new
 		 * Categorie("Natation", categ_Multimidia);
 		 * .....
 		 * Categorie Pc = new Categorie("Foot", categ_Multimidia); // sousCategory2
 		 * categ_Multimidia_Liste.add(telephone); categ_Multimidia_Liste.add(Pc);
-		 * CategorieRpository cateorieRepository =
-		 * ctx.getBean(CategorieRpository.class);
+		 * 
+		 * CategorieRpository cateorieRepository = ctx.getBean(CategorieRpository.class);
 		 * cateorieRepository.save(categ_Multimidia); cateorieRepository.save(Pc);
-		 * cateorieRepository.save(telephone); // Page<User> use =
-		 * userRepository.chercheUserRepondaunsondage("hnd", new // PageRequest(0, 3));
+		 * cateorieRepository.save(telephone); 
+		 * // Page<User> use = userRepository.chercheUserRepondaunsondage("hnd", new // PageRequest(0, 3));
 		 * // use.forEach(e -> System.out.println(e.getNom())); // List<Sondage>ss = //
 		 * abdou.getLes_snd_jawibt_alihom().forEach(e->{e.getQuestions().forEach(z->z.
 		 * getOptiona().getReponce()); // return e ; }); List<Optiona> Choices =
 		 * userRepository.Get_Liste_Reponce(abdou.getCin(), snd2.getId());
 		 * Choices.forEach(e -> System.out.println(e.getReponce()));
 		 * 
-		 * List<Categorie> soucateg =
-		 * cateorieRepository.findByCategoriees(categ_Multimidia.getId());
+		 * List<Categorie> soucateg = cateorieRepository.findByCategoriees(categ_Multimidia.getId());
 		 * 
-		 * soucateg.forEach(e->{System.out.println(e.getName());}); // Page<User> findd
-		 * = userRepository.findByNom("bilel", new PageRequest(0, 1)); ///
+		 * soucateg.forEach(e->{System.out.println(e.getName());}); 
+		 * // Page<User> findd = userRepository.findByNom("bilel", new PageRequest(0, 1)); ///
 		 * findd.forEach(e -> System.out.println(e.getNom())); /
 		 **/
 		User bilel= userRepository.save(new User("098", "bilel", "meddeb", "bilel@meddeb.com", (long) 23206993, "123456789", new Date()));
