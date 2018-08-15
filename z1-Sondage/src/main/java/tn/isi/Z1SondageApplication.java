@@ -204,7 +204,7 @@ public class Z1SondageApplication {
 		 * Categorie Categorie categ_Multimidia = new Categorie("Sport",
 		 * categ_Multimidia_Liste); // sousCategory1 Categorie telephone = new
 		 * Categorie("Natation", categ_Multimidia);
-		 * 
+		 * .....
 		 * Categorie Pc = new Categorie("Foot", categ_Multimidia); // sousCategory2
 		 * categ_Multimidia_Liste.add(telephone); categ_Multimidia_Liste.add(Pc);
 		 * CategorieRpository cateorieRepository =
