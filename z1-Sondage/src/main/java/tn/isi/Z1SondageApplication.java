@@ -42,9 +42,13 @@ public class Z1SondageApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Z1SondageApplication.class, args);
 
-	
+		 UserRepository userRepository = ctx.getBean(UserRepository.class);
+		 SondageRepository sondageRepository =ctx.getBean(SondageRepository.class);
+		 QuestionRepository questionRepository = ctx.getBean(QuestionRepository.class); 
+		 OptionaRepository optionaRepository = ctx.getBean(OptionaRepository.class);
+
 		/*
-		 * UserRepository userRepository = ctx.getBean(UserRepository.class);
+		 * 
 		 * SondageRepository sondageRepository = ctx.getBean(SondageRepository.class);
 		 * userRepository.save(new User("09814217", "meddeb", "bilel", "m2b@mail.com", (long) 23206993)); 
 		 * userRepository.save(new User("09814212", "meddeb2","bilel2", "m2b@mail.com2", (long) 232062993));
@@ -73,7 +77,7 @@ public class Z1SondageApplication {
 		 * optionaRepository.save(new Optiona("ok6"));
 		 * optionaRepository.save(new Optiona("ok7"));
 		 */
-		 OptionaRepository optionaRepository = ctx.getBean(OptionaRepository.class);
+     	
 
 		/*
 		 * OptionaRepository optionaRepository = ctx.getBean(OptionaRepository.class);
@@ -94,7 +98,7 @@ public class Z1SondageApplication {
 		  Optiona o7 = optionaRepository.save(new Optiona("ok7")); 
 		  Optiona o8 = optionaRepository.save(new Optiona("ok88"));
 		  
-		  QuestionRepository questionRepository = ctx.getBean(QuestionRepository.class); 
+		  
 		  Collection<Optiona> optionas1 = new ArrayList<Optiona>();
 		  
 		  optionas1.add(o1); 
@@ -135,18 +139,32 @@ public class Z1SondageApplication {
 		  optionaRepository.save(o7); 
 		  optionaRepository.save(o8); 
 		  
+		  Question q10 = questionRepository.save(new Question("chniya rayek111")); 
+		  Question q11 = questionRepository.save(new Question("chniya rayek122"));
+		  Question q12 = questionRepository.save(new Question("chniya rayek1110"));
+		 
+		  Collection<Question> Questionns1 = new ArrayList<Question>();
+		  Questionns1.add(q10);
+		  Questionns1.add(q11);
+		  Questionns1.add(q12);
+		  
+		  Sondage S10= sondageRepository.save(new Sondage("sondagassss", Questionns1));
+		  q10.setSondage(S10);
+		  q12.setSondage(S10);
+		  q12.setSondage(S10);
+		  
+		  questionRepository.save(q10);
+		  questionRepository.save(q11);
+		  questionRepository.save(q12);
 		 
 		/*
 		 * SondageRepository sondageRepository = ctx.getBean(SondageRepository.class);
 		 * 
-		 * UserRepository userRepository = ctx.getBean(UserRepository.class); User bilel
-		 * = userRepository .save(new User("4", "bilel", "meddeb", "b@mail.com", (long)
-		 * 23206993, "123456789", new Date())); User hamza = userRepository .save(new
-		 * User("2", "hamza", "meddeb", "b@mail.com", (long) 23206993, "123456789", new
-		 * Date())); User amir = userRepository .save(new User("3", "amir", "meddeb",
-		 * "b@mail.com", (long) 23206993, "123456789", new Date())); User mohsen =
-		 * userRepository .save(new User("10", "mohsen", "meddeb", "b@mail.com", (long)
-		 * 23206993, "123456789", new Date()));
+		 * UserRepository userRepository = ctx.getBean(UserRepository.class); 
+		 * User bilel = userRepository .save(new User("4", "bilel", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date())); 
+		 * User hamza = userRepository .save(new User("2", "hamza", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date()));
+		 * User amir = userRepository .save(new User("3", "amir", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date())); 
+		 * User mohsen = userRepository .save(new User("10", "mohsen", "meddeb", "b@mail.com", (long) 23206993, "123456789", new Date()));
 		 * 
 		 * User afif = userRepository .save(new User("6", "afif", "meddeb",
 		 * "b@mail.com", (long) 23206993, "123456789", new Date()));
@@ -225,36 +243,19 @@ public class Z1SondageApplication {
 		 * = userRepository.findByNom("bilel", new PageRequest(0, 1)); ///
 		 * findd.forEach(e -> System.out.println(e.getNom())); /
 		 **/
-		UserRepository userRepository = ctx.getBean(UserRepository.class);
 		User bilel= userRepository.save(new User("098", "bilel", "meddeb", "bilel@meddeb.com", (long) 23206993, "123456789", new Date()));
-		userRepository.save(new User("097", "med", "meddeb", "bilel@meddeb.com", (long) 23206993, "123456789", new Date()));
-		userRepository.save(new User("096", "hamza", "meddeb", "bilel@meddeb.com", (long) 2, "123456789", new Date()));
 		userRepository.save(new User("095", "bilel", "meddeb", "a@meddeb.com", (long) 23206993, "123456789","USER", new Date(), "aaaaaaa", "xs"));
 		userRepository.save(new User("094", "bilel", "meddeb", "b@meddeb.com", (long) 23206993, "123456789","ADMIN", new Date(), "aaaaaaa", "xs"));
 		
 	/*	SondageRepository sondageRepository =ctx.getBean(SondageRepository.class);
 		sondageRepository.save(new Sondage("snd1", "zara", "mrawil", new Date(), true, bilel));*/
 	
-		SondageRepository sondageRepository =ctx.getBean(SondageRepository.class);
 		sondageRepository.save(new Sondage("snd1", "zara", "mrawil", new Date(), true));
 		sondageRepository.save(new Sondage("snd2", "zara2", "mrawil2", new Date(), true));
 		sondageRepository.save(new Sondage("snd3", "zara3", "mrawil3", new Date(), true));
 		sondageRepository.save(new Sondage("sndh2", "ztttara2", "mrawil2", new Date(), true));
 		sondageRepository.save(new Sondage("bbbb", "zara", "ddfdd"));
-		
-		/*QuestionRepository questionRepository=ctx.getBean(QuestionRepository.class);
-		Question q1= questionRepository.save(new Question("chniya rayek1"));
-		Question q2= questionRepository.save(new Question("chniya raqqyek1"));*/
-		
-		Collection<Question> qq = new ArrayList<Question>();
-		qq.add(q1);
-		qq.add(q2);
-		
-		Sondage s1=	sondageRepository.save(new Sondage("qqq", "qqqa", new Date(), false, null, qq, null));
-		q1.setSondage(s1);
-		q2.setSondage(s1);
-		
-		sondageRepository.save(s1);
+	
 	}
 
 }

@@ -24,6 +24,7 @@ public class Optiona implements Serializable {
 
 	@OneToOne(mappedBy="optiona")
 	private Question question;
+	
 	@ManyToOne
 	private Question qst;
 

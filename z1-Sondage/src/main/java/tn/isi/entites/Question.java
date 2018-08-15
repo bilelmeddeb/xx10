@@ -18,6 +18,7 @@ public class Question implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String titre_question;
+	
 	@OneToMany(mappedBy="qst")
 	private Collection<Optiona> options ; 
 

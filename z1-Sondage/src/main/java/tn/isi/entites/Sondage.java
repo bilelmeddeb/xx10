@@ -136,6 +136,12 @@ public class Sondage implements Serializable{
 
 	
 
+	public Sondage(String titre, Collection<Question> questions) {
+		super();
+		this.titre = titre;
+		this.questions = questions;
+	}
+
 	public Sondage(String titre, String descriptions, Date dateCreation, boolean accepted, User owner,
 			Collection<Question> questions, Collection<User> users_jawbou_3aliya) {
 		super();
