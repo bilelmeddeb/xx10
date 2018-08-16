@@ -39,6 +39,7 @@ public class QuestionController {
 		return new ResponseEntity<>(createdQuestion,HttpStatus.OK);
 	}
 	
+	
 	@RequestMapping(value = "/questionLista", method = RequestMethod.GET)
 	public List<Question> getQuestion() {
 		return questionRepository.findAll();

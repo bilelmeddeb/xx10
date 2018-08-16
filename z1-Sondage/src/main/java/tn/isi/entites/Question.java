@@ -12,6 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Question implements Serializable{
 	@Id
@@ -19,9 +22,11 @@ public class Question implements Serializable{
 	private Long id;
 	private String titre_question;
 	
+	
 	@OneToMany(mappedBy="qst")
 	private Collection<Optiona> options ; 
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="ID_SND")
 	private Sondage sondage;

@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Optiona implements Serializable {
 	@Id
@@ -25,6 +27,7 @@ public class Optiona implements Serializable {
 	@OneToOne(mappedBy="optiona")
 	private Question question;
 	
+	@JsonIgnore
 	@ManyToOne
 	private Question qst;
 

@@ -71,7 +71,8 @@ public class Z1SondageApplication {
 		 * Optiona opa6 = optionaRepository.save(new Optiona("Naght"));
 		 */
 		
-		  Optiona o1 = optionaRepository.save(new Optiona("ok1")); 
+		 /*
+		  * Optiona o1 = optionaRepository.save(new Optiona("ok1")); 
 		  Optiona o2 = optionaRepository.save(new Optiona("ok2")); 
 		  Optiona o3 = optionaRepository.save(new Optiona("ok3")); 
 		  Optiona o4 = optionaRepository.save(new Optiona("ok4")); 
@@ -119,7 +120,7 @@ public class Z1SondageApplication {
 		  optionaRepository.save(o5);
 		  optionaRepository.save(o6);
 		  optionaRepository.save(o7); 
-		  optionaRepository.save(o8); 
+		  optionaRepository.save(o8); */
 		  
 		  Question q10 = questionRepository.save(new Question("chniya rayek111")); 
 		  Question q11 = questionRepository.save(new Question("chniya rayek122"));
@@ -132,13 +133,12 @@ public class Z1SondageApplication {
 		  
 		  Sondage S10= sondageRepository.save(new Sondage("sondagassss", Questionns1));
 		  q10.setSondage(S10);
-		  q12.setSondage(S10);
+		  q11.setSondage(S10);
 		  q12.setSondage(S10);
 		  
 		  questionRepository.save(q10);
 		  questionRepository.save(q11);
 		  questionRepository.save(q12);
-		 
 		/*......
 		 * SondageRepository sondageRepository = ctx.getBean(SondageRepository.class);
 		 * 
@@ -223,13 +223,7 @@ public class Z1SondageApplication {
 		
 	/*	SondageRepository sondageRepository =ctx.getBean(SondageRepository.class);
 		sondageRepository.save(new Sondage("snd1", "zara", "mrawil", new Date(), true, bilel));*/
-	
-		sondageRepository.save(new Sondage("snd1", "zara", "mrawil", new Date(), true));
-		sondageRepository.save(new Sondage("snd2", "zara2", "mrawil2", new Date(), true));
-		sondageRepository.save(new Sondage("snd3", "zara3", "mrawil3", new Date(), true));
-		sondageRepository.save(new Sondage("sndh2", "ztttara2", "mrawil2", new Date(), true));
-		sondageRepository.save(new Sondage("bbbb", "zara", "ddfdd"));
-	
+    //sondageRepository.GetNoDuplicate().forEach(e->System.out.println(e.getCategorie()));		
 	}
 
 }

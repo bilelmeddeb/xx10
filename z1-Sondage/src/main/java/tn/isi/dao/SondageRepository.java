@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import tn.isi.entites.Question;
 import tn.isi.entites.Sondage;
 
 public interface SondageRepository extends JpaRepository<Sondage, Long> {
@@ -29,9 +30,12 @@ public interface SondageRepository extends JpaRepository<Sondage, Long> {
 	@Query("select sndg from  Sondage sndg join sndg.users_jawbou_3aliya u where u.cin = :cin ")
 	public List<Sondage> chercheSondageByUserRependue(@Param("cin") String cin);
 
-
 	@Query("select sndg  from Sondage sndg join sndg.categorie ctgr where ctgr.name= :title ")
 	public List<Sondage> chercheSondageByCategorie(@Param("title") String title);
-	
+
+	@Query("select distinct  sndg  from Sondage sndg  ")
+	public List<Sondage> GetNoDuplicate();
+
 	public Sondage findOneByTitre(String titre);
+
 }
