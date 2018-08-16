@@ -46,7 +46,7 @@ public class SondageRegisterController {
 		return new ResponseEntity<>(createdSondage,HttpStatus.OK);
 	}
 	
-	
+	/*************/
 	
 	@RequestMapping(
 			value="/saveall",
