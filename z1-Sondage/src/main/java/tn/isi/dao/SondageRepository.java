@@ -11,11 +11,13 @@ import org.springframework.data.repository.query.Param;
 
 import tn.isi.entites.Question;
 import tn.isi.entites.Sondage;
+import tn.isi.entites.User;
 
 public interface SondageRepository extends JpaRepository<Sondage, Long> {
 
-	public List<Sondage> findByTitre(String t);
-
+	@Query("select s from Sondage s where s.id = :x")
+	public Sondage chercherSndByid(@Param("x") Long id);
+	
 	public Page<Sondage> findByTitre(String t, Pageable pageable);
 
 	@Query("select s from Sondage s where s.titre like :x")
@@ -35,7 +37,9 @@ public interface SondageRepository extends JpaRepository<Sondage, Long> {
 
 	@Query("select distinct  sndg  from Sondage sndg  ")
 	public List<Sondage> GetNoDuplicate();
-
+	
 	public Sondage findOneByTitre(String titre);
+
+	public Sondage findByTitre(String titre);
 
 }

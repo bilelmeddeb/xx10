@@ -72,7 +72,8 @@ public class Z1SondageApplication {
 		 */
 		
 		 /*
-		  * Optiona o1 = optionaRepository.save(new Optiona("ok1")); 
+		  *
+		  Optiona o1 = optionaRepository.save(new Optiona("ok1")); 
 		  Optiona o2 = optionaRepository.save(new Optiona("ok2")); 
 		  Optiona o3 = optionaRepository.save(new Optiona("ok3")); 
 		  Optiona o4 = optionaRepository.save(new Optiona("ok4")); 
@@ -121,24 +122,91 @@ public class Z1SondageApplication {
 		  optionaRepository.save(o6);
 		  optionaRepository.save(o7); 
 		  optionaRepository.save(o8); */
-		  
-		  Question q10 = questionRepository.save(new Question("chniya rayek111")); 
-		  Question q11 = questionRepository.save(new Question("chniya rayek122"));
-		  Question q12 = questionRepository.save(new Question("chniya rayek1110"));
 		 
-		  Collection<Question> Questionns1 = new ArrayList<Question>();
-		  Questionns1.add(q10);
-		  Questionns1.add(q11);
-		  Questionns1.add(q12);
+		  Optiona o1 = optionaRepository.save(new Optiona("op1-q1-s1")); 
+		  Optiona o2 = optionaRepository.save(new Optiona("op2-q1-s1")); 
 		  
-		  Sondage S10= sondageRepository.save(new Sondage("sondagassss", Questionns1));
-		  q10.setSondage(S10);
-		  q11.setSondage(S10);
-		  q12.setSondage(S10);
+		  Optiona o3 = optionaRepository.save(new Optiona("op1-q2-s1")); 
+		  Optiona o4 = optionaRepository.save(new Optiona("op2-q2-s1")); 
 		  
-		  questionRepository.save(q10);
-		  questionRepository.save(q11);
-		  questionRepository.save(q12);
+		  Optiona o5 = optionaRepository.save(new Optiona("op1-q1-s2")); 
+		  Optiona o6 = optionaRepository.save(new Optiona("op2-q1-s2")); 
+		  Optiona o7 = optionaRepository.save(new Optiona("op3-q1-s2")); 
+		  
+		  Optiona o8 = optionaRepository.save(new Optiona("op1-q2-s2"));
+		  Optiona o9 = optionaRepository.save(new Optiona("op2-q2-s2"));
+		  
+		  Collection<Optiona> les_op_q1_s1 = new ArrayList<Optiona>();
+		  les_op_q1_s1.add(o1);
+		  les_op_q1_s1.add(o2);
+		  
+		  Collection<Optiona> les_op_q2_s1 = new ArrayList<Optiona>();
+		  les_op_q2_s1.add(o3);
+		  les_op_q2_s1.add(o4);
+		  
+		  Collection<Optiona> les_op_q1_s2 = new ArrayList<Optiona>();
+		  les_op_q1_s2.add(o5);
+		  les_op_q1_s2.add(o6);
+		  les_op_q1_s2.add(o7);
+
+		  Collection<Optiona> les_op_q2_s2 = new ArrayList<Optiona>();
+		  les_op_q2_s2.add(o8);
+		  les_op_q2_s2.add(o9);
+		  
+		 
+		  
+		  Question q1_s1 = questionRepository.save(new Question("q1-s1",les_op_q1_s1)); 
+		  Question q2_s1 = questionRepository.save(new Question("q2-s1",les_op_q2_s1));
+		 
+		  Question q1_s2 = questionRepository.save(new Question("q1-s2",les_op_q1_s2));
+		  Question q2_s2 = questionRepository.save(new Question("q2-s2",les_op_q2_s2));
+		 
+		  o1.setQst(q1_s1); 
+		  o2.setQst(q1_s1);
+		  
+		  o3.setQst(q2_s1); 
+		  o4.setQst(q2_s1);
+		  
+		  o5.setQst(q1_s2);
+		  o6.setQst(q1_s2); 
+		  o7.setQst(q1_s2); 
+		  o8.setQst(q2_s2); 
+		  o9.setQst(q2_s2); 
+		  
+		  optionaRepository.save(o1); 
+		  optionaRepository.save(o2);
+		  optionaRepository.save(o3);
+		  optionaRepository.save(o4);
+		  optionaRepository.save(o5);
+		  optionaRepository.save(o6);
+		  optionaRepository.save(o7); 
+		  optionaRepository.save(o8);
+		  optionaRepository.save(o9);
+
+		  Collection<Question> les_qus_s1 = new ArrayList<Question>();
+		  les_qus_s1.add(q1_s1);
+		  les_qus_s1.add(q2_s1);
+		  
+		  Collection<Question> les_qus_s2 = new ArrayList<Question>();
+		  les_qus_s2.add(q1_s2);
+		  les_qus_s2.add(q2_s2);
+		  
+		  Sondage Sondage_s1= sondageRepository.save(new Sondage("sondagae_s1", les_qus_s1));
+		  Sondage Sondage_s2= sondageRepository.save(new Sondage("sondagae_s2", les_qus_s2));
+		  
+		  Sondage sondage_s3=sondageRepository.save(new Sondage("photo", "sondage_s3", "testtest", new Date()));
+		  q1_s1.setSondage(Sondage_s1);
+		  q2_s1.setSondage(Sondage_s1);
+		  
+		  q1_s2.setSondage(Sondage_s2);
+		  q2_s2.setSondage(Sondage_s2);
+	  	  
+		  questionRepository.save(q1_s2);
+		  questionRepository.save(q2_s2);
+
+		  questionRepository.save(q1_s1);
+		  questionRepository.save(q2_s1);
+		  
 		/*......
 		 * SondageRepository sondageRepository = ctx.getBean(SondageRepository.class);
 		 * 
@@ -224,6 +292,7 @@ public class Z1SondageApplication {
 	/*	SondageRepository sondageRepository =ctx.getBean(SondageRepository.class);
 		sondageRepository.save(new Sondage("snd1", "zara", "mrawil", new Date(), true, bilel));*/
     //sondageRepository.GetNoDuplicate().forEach(e->System.out.println(e.getCategorie()));		
+		
 	}
 
 }

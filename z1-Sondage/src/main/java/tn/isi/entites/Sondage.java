@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,30 +18,43 @@ import javax.xml.bind.annotation.XmlTransient;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 //win 7atitha ? 
 @Entity
-public class Sondage implements Serializable{
+
+public class Sondage implements Serializable {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String photosnd;
-	
 	private String titre;
-	
-	@ManyToOne
-	@JoinColumn(name="CIN_OWNER")
-	private User owner;
-	
-	@OneToMany(mappedBy="sondage")
-	private Collection<Question> questions;
-	
-	@ManyToMany(mappedBy="les_snd_jawibt_alihom")
-	private Collection<User> users_jawbou_3aliya;
-	
+	private String photosnd;
 	private String descriptions;
 	private Date dateCreation;
-	private boolean accepted ;
-	
+	private boolean accepted;
+
+	@ManyToOne
+	@JoinColumn(name = "CIN_OWNER")
+	private User owner;
+
+	@OneToMany(mappedBy = "sondage", fetch = FetchType.EAGER)
+	private Collection<Question> questions;
+
+	@ManyToMany(mappedBy = "les_snd_jawibt_alihom")
+	private Collection<User> users_jawbou_3aliya;
+
+	@ManyToOne
+	private Categorie categorie;
+
+	/*********** sans parametre *********************/
+	public Sondage() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/******************* get +set ******************/
 	public String getPhotosnd() {
 		return photosnd;
 	}
@@ -57,14 +71,6 @@ public class Sondage implements Serializable{
 		this.categorie = categorie;
 	}
 
-
-	
-
-	
-	
-
-	@ManyToOne
-	private Categorie categorie ; 
 	public Long getId() {
 		return id;
 	}
@@ -79,16 +85,6 @@ public class Sondage implements Serializable{
 
 	public void setTitre(String titre) {
 		this.titre = titre;
-	}
-	
-
-	
-
-	public Sondage(String photosnd, String titre, String descriptions) {
-		super();
-		this.photosnd = photosnd;
-		this.titre = titre;
-		this.descriptions = descriptions;
 	}
 
 	public String getDescriptions() {
@@ -139,7 +135,14 @@ public class Sondage implements Serializable{
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
 	}
 
-	
+	/************** AVEC PARAMETREE *********************/
+
+	public Sondage(String photosnd, String titre, String descriptions) {
+		super();
+		this.photosnd = photosnd;
+		this.titre = titre;
+		this.descriptions = descriptions;
+	}
 
 	public Sondage(String titre, Collection<Question> questions) {
 		super();
@@ -184,11 +187,6 @@ public class Sondage implements Serializable{
 		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.users_jawbou_3aliya = users_jawbou_3aliya;
-	}
-
-	public Sondage() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Sondage(String titre, String descriptions, Date dateCreation) {
@@ -243,7 +241,8 @@ public class Sondage implements Serializable{
 		this.dateCreation = dateCreation;
 	}
 
-	public Sondage(String photosnd, String titre, String descriptions, Date dateCreation, boolean accepted, User owner) {
+	public Sondage(String photosnd, String titre, String descriptions, Date dateCreation, boolean accepted,
+			User owner) {
 		super();
 		this.photosnd = photosnd;
 		this.titre = titre;
@@ -275,10 +274,12 @@ public class Sondage implements Serializable{
 		this.dateCreation = dateCreation;
 		this.accepted = accepted;
 	}
-	 
-	
- 
 
-	
-	
+	@Override
+	public String toString() {
+		return "Sondage [id=" + id + ", titre=" + titre + ", photosnd=" + photosnd + ", descriptions=" + descriptions
+				+ ", dateCreation=" + dateCreation + ", accepted=" + accepted + ", owner=" + owner + ", questions="
+				+ questions + ", users_jawbou_3aliya=" + users_jawbou_3aliya + ", categorie=" + categorie + "]";
+	}
+
 }

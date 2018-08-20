@@ -30,7 +30,18 @@ public class Categorie {
 
 	@OneToMany(mappedBy = "categoriee", fetch = FetchType.LAZY)
 	private Collection<Categorie> sous_Categorie;
+	
 
+	@OneToMany(mappedBy = "categorie")
+	private Collection<Sondage> sondages;
+
+	/*************SANS PARAMETRE********************/
+	public Categorie() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	/************ GET + SET **********/
 	public Collection<Categorie> getSous_Categorie() {
 		return sous_Categorie;
 	}
@@ -38,9 +49,6 @@ public class Categorie {
 	public void setSous_Categorie(Collection<Categorie> sous_Categorie) {
 		this.sous_Categorie = sous_Categorie;
 	}
-
-	@OneToMany(mappedBy = "categorie")
-	private Collection<Sondage> sondages;
 
 	public Categorie getCategorie() {
 		return categoriee;
@@ -65,7 +73,25 @@ public class Categorie {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public Long getId() {
+		return id;
+	}
 
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Categorie getCategoriee() {
+		return categoriee;
+	}
+
+	public void setCategoriee(Categorie categoriee) {
+		this.categoriee = categoriee;
+	}
+
+
+	/***********Constrecteur****************/
+	
 	public Categorie(String name, Categorie categorie, Collection<Categorie> sous_Categorie,
 			Collection<Sondage> sondages) {
 		super();
@@ -100,26 +126,7 @@ public class Categorie {
 		this.sondages = sondages;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public Categorie getCategoriee() {
-		return categoriee;
-	}
-
-	public void setCategoriee(Categorie categoriee) {
-		this.categoriee = categoriee;
-	}
-
-	public Categorie() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	
 	
