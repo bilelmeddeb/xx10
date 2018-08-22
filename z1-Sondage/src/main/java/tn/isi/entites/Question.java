@@ -116,13 +116,7 @@ public class Question implements Serializable{
 	}
 	
 	
-	/****************to String ******************************************/
-	@Override
-	public String toString() {
-		return "Question [id=" + id + ", titre_question=" + titre_question + ", options=" + options + ", sondage="
-				+ sondage + ", optiona=" + optiona + "]";
-	}
-
+	
 	
 	
 	

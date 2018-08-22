@@ -89,11 +89,6 @@ public class Optiona implements Serializable {
 		this.qst = qst;
 	}
 
-/**********to string***********/
-	@Override
-	public String toString() {
-		return "Optiona [id=" + id + ", reponce=" + reponce + ", question=" + question + ", qst=" + qst + "]";
-	}
 
 	
 }

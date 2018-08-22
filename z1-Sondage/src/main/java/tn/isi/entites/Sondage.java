@@ -275,11 +275,6 @@ public class Sondage implements Serializable {
 		this.accepted = accepted;
 	}
 
-	@Override
-	public String toString() {
-		return "Sondage [id=" + id + ", titre=" + titre + ", photosnd=" + photosnd + ", descriptions=" + descriptions
-				+ ", dateCreation=" + dateCreation + ", accepted=" + accepted + ", owner=" + owner + ", questions="
-				+ questions + ", users_jawbou_3aliya=" + users_jawbou_3aliya + ", categorie=" + categorie + "]";
-	}
+	
 
 }
