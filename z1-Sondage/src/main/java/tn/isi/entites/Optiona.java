@@ -35,7 +35,8 @@ public class Optiona implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 	
-
+	/*********Get and set*********************/
+	
 	public Long getId() {
 		return id;
 	}

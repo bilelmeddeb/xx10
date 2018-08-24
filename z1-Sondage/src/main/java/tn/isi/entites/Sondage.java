@@ -137,11 +137,35 @@ public class Sondage implements Serializable {
 
 	/************** AVEC PARAMETREE *********************/
 
+	
 	public Sondage(String photosnd, String titre, String descriptions) {
 		super();
 		this.photosnd = photosnd;
 		this.titre = titre;
 		this.descriptions = descriptions;
+	}
+
+	public Sondage(String titre, String photosnd, String descriptions, Date dateCreation, User owner,
+			Collection<Question> questions) {
+		super();
+		this.titre = titre;
+		this.photosnd = photosnd;
+		this.descriptions = descriptions;
+		this.dateCreation = dateCreation;
+		this.owner = owner;
+		this.questions = questions;
+	}
+
+	public Sondage(String titre, String photosnd, String descriptions, Date dateCreation, boolean accepted, User owner,
+			Collection<Question> questions) {
+		super();
+		this.titre = titre;
+		this.photosnd = photosnd;
+		this.descriptions = descriptions;
+		this.dateCreation = dateCreation;
+		this.accepted = accepted;
+		this.owner = owner;
+		this.questions = questions;
 	}
 
 	public Sondage(String titre, Collection<Question> questions) {
@@ -157,6 +181,19 @@ public class Sondage implements Serializable {
 		this.descriptions = descriptions;
 		this.dateCreation = dateCreation;
 		this.accepted = accepted;
+		this.owner = owner;
+		this.questions = questions;
+		this.users_jawbou_3aliya = users_jawbou_3aliya;
+	}
+
+	
+	public Sondage(String titre, String photosnd, String descriptions, Date dateCreation, User owner,
+			Collection<Question> questions, Collection<User> users_jawbou_3aliya) {
+		super();
+		this.titre = titre;
+		this.photosnd = photosnd;
+		this.descriptions = descriptions;
+		this.dateCreation = dateCreation;
 		this.owner = owner;
 		this.questions = questions;
 		this.users_jawbou_3aliya = users_jawbou_3aliya;

@@ -31,63 +31,28 @@ public class User implements Serializable {
 	private String imageuser;
 	private String gender;
 	
+	@OneToMany(mappedBy = "owner")
+	private Collection<Sondage> les_snd_ALI_sna3thom;
+
+	@ManyToMany
+	@JoinTable(name = "S_U_R")
+	private Collection<Sondage> les_snd_jawibt_alihom;
 	
-	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
-			Date birth_date, String imageuser, String gender) {
+	
+	/****************C-SANS-PARAMETRE***************************/
+	public User() {
 		super();
-		this.cin = cin;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.email = email;
-		this.tel = tel;
-		this.password = password;
-		this.roles = roles;
-		this.birth_date = birth_date;
-		this.imageuser = imageuser;
-		this.gender = gender;
+		// TODO Auto-generated constructor stub
 	}
 
-	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
-			Date birth_date, String imageuser, String gender, Collection<Sondage> les_snd_ALI_sna3thom,
-			Collection<Sondage> les_snd_jawibt_alihom) {
-		super();
-		this.cin = cin;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.email = email;
-		this.tel = tel;
-		this.password = password;
-		this.roles = roles;
-		this.birth_date = birth_date;
-		this.imageuser = imageuser;
-		this.gender = gender;
-		this.les_snd_ALI_sna3thom = les_snd_ALI_sna3thom;
-		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
-	}
-
+	
+	/**************Get-and-set*********************/
 	public String getGender() {
 		return gender;
 	}
 
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
-
-	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
-			Date birth_date, String imageuser, Collection<Sondage> les_snd_ALI_sna3thom,
-			Collection<Sondage> les_snd_jawibt_alihom) {
-		super();
-		this.cin = cin;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.email = email;
-		this.tel = tel;
-		this.password = password;
-		this.roles = roles;
-		this.birth_date = birth_date;
-		this.imageuser = imageuser;
-		this.les_snd_ALI_sna3thom = les_snd_ALI_sna3thom;
-		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
 	}
 
 	public String getimageuser() {
@@ -97,13 +62,6 @@ public class User implements Serializable {
 	public void setimageuser(String imageuser) {
 		this.imageuser = imageuser;
 	}
-
-	@OneToMany(mappedBy = "owner")
-	private Collection<Sondage> les_snd_ALI_sna3thom;
-
-	@ManyToMany
-	@JoinTable(name = "S_U_R")
-	private Collection<Sondage> les_snd_jawibt_alihom;
 
 	public String getCin() {
 		return cin;
@@ -185,11 +143,27 @@ public class User implements Serializable {
 		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
 	}
 
-	public User() {
+	
+	
+	/*******************************C-avec-parametre*********************************************/
+	
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
+			Date birth_date, String imageuser, Collection<Sondage> les_snd_ALI_sna3thom,
+			Collection<Sondage> les_snd_jawibt_alihom) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.cin = cin;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.tel = tel;
+		this.password = password;
+		this.roles = roles;
+		this.birth_date = birth_date;
+		this.imageuser = imageuser;
+		this.les_snd_ALI_sna3thom = les_snd_ALI_sna3thom;
+		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
 	}
-
+	
 	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
 			Date birth_date, Collection<Sondage> les_snd_ALI_sna3thom, Collection<Sondage> les_snd_jawibt_alihom) {
 		super();
@@ -268,6 +242,38 @@ public class User implements Serializable {
 		this.password = password;
 		this.birth_date = birth_date;
 		this.imageuser = imageuser;
+	}
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
+			Date birth_date, String imageuser, String gender) {
+		super();
+		this.cin = cin;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.tel = tel;
+		this.password = password;
+		this.roles = roles;
+		this.birth_date = birth_date;
+		this.imageuser = imageuser;
+		this.gender = gender;
+	}
+
+	public User(String cin, String nom, String prenom, String email, Long tel, String password, String roles,
+			Date birth_date, String imageuser, String gender, Collection<Sondage> les_snd_ALI_sna3thom,
+			Collection<Sondage> les_snd_jawibt_alihom) {
+		super();
+		this.cin = cin;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.tel = tel;
+		this.password = password;
+		this.roles = roles;
+		this.birth_date = birth_date;
+		this.imageuser = imageuser;
+		this.gender = gender;
+		this.les_snd_ALI_sna3thom = les_snd_ALI_sna3thom;
+		this.les_snd_jawibt_alihom = les_snd_jawibt_alihom;
 	}
 
 }
