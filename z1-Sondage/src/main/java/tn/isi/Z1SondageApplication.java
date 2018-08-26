@@ -191,7 +191,11 @@ public class Z1SondageApplication {
 		   * 
 		   * ey chmanaha ?? kifah chnamil ana affectation lil les option ?
 		   * 
+		   * mnaha les affectation athoukom mta3 les option lichkoun mchaw 
+		   * l hamza wala il bilel 
+		   * khater taw mchaw li zouz
 		   * */
+		 
 		  q1_s1.setOptiona(o1);
 		  questionRepository.save(q1_s1);
 		  q2_s1.setOptiona(o4);
