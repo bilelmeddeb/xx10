@@ -36,7 +36,10 @@ public interface UserRepository extends JpaRepository<User, String> {
 	
 	@Query("select op from  Optiona  op join  op.question q join q.sondage sng join sng.users_jawbou_3aliya usr where sng.id = :id_SND and usr.cin= :cin ")
 	public List<Optiona> Get_Liste_Reponce(@Param("cin") String cin, @Param("id_SND") Long id_SND);
-
+/* the new one */
+	
+	@Query("select op from  Optiona  op join  op.users_Answers_Reponces ur join op.qst qst join qst.sondage sng   where sng.id = :id_SND and ur.cin= :cin ")
+	public List<Optiona> Get_Liste_Reponcesss(@Param("cin") String cin, @Param("id_SND") Long id_SND);
 	public User findOneByEmail(String email);
 	
 	public User findOneByEmailAndPassword(String email, String password);

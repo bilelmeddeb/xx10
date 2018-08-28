@@ -3,6 +3,7 @@ package tn.isi.entites;
 import java.io.Serializable;
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -26,8 +27,8 @@ public class Question implements Serializable{
 	
 	private String titre_question;
 	
-	
-	@OneToMany(mappedBy="qst")
+	/*fetch = FetchType.LAZY,  cascade = CascadeType.ALL*/
+	@OneToMany(mappedBy="qst",cascade = CascadeType.MERGE)
 	private Collection<Optiona> options ; 
 
 	@ManyToOne(fetch=FetchType.EAGER)

@@ -1,6 +1,7 @@
 package tn.isi.entites;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -27,6 +30,11 @@ public class Optiona implements Serializable {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Question qst;
+	
+	@ManyToMany
+	@JoinTable(name = "Responce_User")
+
+	private Collection<User> users_Answers_Reponces;
 
 	/**************sans para*********************/
 
@@ -37,8 +45,18 @@ public class Optiona implements Serializable {
 	
 	/*********Get and set*********************/
 	
+	
+	
 	public Long getId() {
 		return id;
+	}
+
+	public Collection<User> getUsers_Answers_Reponces() {
+		return users_Answers_Reponces;
+	}
+
+	public void setUsers_Answers_Reponces(Collection<User> users_Answers_Reponces) {
+		this.users_Answers_Reponces = users_Answers_Reponces;
 	}
 
 	public void setId(Long id) {

@@ -39,6 +39,10 @@ public class User implements Serializable {
 	private Collection<Sondage> les_snd_jawibt_alihom;
 	
 	
+	// MyResponces()
+	 @ManyToMany(mappedBy = "users_Answers_Reponces")
+	private Collection<Optiona> MyResponces;
+	
 	/****************C-SANS-PARAMETRE***************************/
 	public User() {
 		super();
@@ -47,9 +51,21 @@ public class User implements Serializable {
 
 	
 	/**************Get-and-set*********************/
+	
+	
 	public String getGender() {
 		return gender;
 	}
+
+	public Collection<Optiona> getMyResponces() {
+		return MyResponces;
+	}
+
+
+	public void setMyResponces(Collection<Optiona> myResponces) {
+		MyResponces = myResponces;
+	}
+
 
 	public void setGender(String gender) {
 		this.gender = gender;
